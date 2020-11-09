@@ -14,7 +14,6 @@
 #     ###a What I have figured is that I could just sort the array using the sorted() method before finding the max and min values
 #     consec = max_stats - min_stats + 1 - len(statues) ## This is taking the largest value and subtracting the smallest value and adding 1, then subtracting the length of the statues.. 
 #     return( consec)
-##To GH
 
 #my refacter:
 def makeArrayConsecutive2(statues):
