@@ -21,3 +21,8 @@ def makeArrayConsecutive2(statues):
 
 data = [6, 2, 3, 8] 
 print(makeArrayConsecutive2(data))
+
+#other sol:
+# def makeArrayConsecutive2(statues):
+#     return max(statues) - min(statues) - len(statues) + 1
+#Same as mine!
