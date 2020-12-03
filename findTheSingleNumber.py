@@ -16,13 +16,13 @@
 # But, std::set is commonly implemented as a red-black binary search tree. Insertion on this data structure has a worst-case of O(log(n)) complexity, as the tree is kept balanced. we will be using set here.
 
 # Below is the implementation of above approach:
- ##This is geeks for geeks solution:::
+ ##This is geeks for geeks solution::: It only passes 2/3 tests
 # def csFindTheSingleNumber(nums):
 #     if nums is None:
 #         return
 #     return(3 * sum(set(nums)) - sum(nums)) / 2
 
-###My solution
+###My solution passes all the tests
 def csFindTheSingleNumber(nums):
     d = {} ##Creating a dictionary allow for better storage and search
     for n in nums: #Searching through each value of nums
@@ -39,5 +39,70 @@ def csFindTheSingleNumber(nums):
 
 
 
+
+# condenced linked list 
+# Singly-linked lists are already defined with this interface:
+# class ListNode(object):
+#   def __init__(self, x):
+#     self.value = x
+#     self.next = None
+#
+def condense_linked_list(node):
+    if node is None:
+        return
+    curr = node
+    while curr is not None:
+        val = curr
+        while val.next:
+            if val.next.value == curr.value:
+                val.next = val.next.next
+            else:
+                val = val.next
+        curr = curr.next
+    return node
+
+
+# first not repeating 
+def first_not_repeating_character(s):
+    # for letters in s:
+    #     print('start', s.index(letters), letters)
+    #     print('end', s.rindex(letters))
+    #     if s.index(letters) == s.rindex(letters):
+    #         return letters
+
+    # return '_'
+    
+    d = {}
+    ones = []
+    if s is None:
+        return
+    for letter in s:
+        if letter in d:
+            d[letter] += 1
+        else:
+            d[letter] = 1
+            
+    for l, i in d.items():
+        if i == 1:
+            # print(l)
+            ones.append(l)
+            first = ones[0]
+            return(first)
+    return '_'
+
+#   people = []
+#     possible = []
+#     for a in trust:
+#         if a[0] == n:
+#             return (-1)
+#         if n is a[1] and n is not a[0]:
+#             print('maybe')
+#             possible.append(a[1])
+#             for s in a:
+#                 people.append(s)
+#                 if len(possible) != (len(people) *2 ):
+#                     print('maybe') 
+#         print(a,n)
         
+
 
