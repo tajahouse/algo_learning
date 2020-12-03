@@ -6,7 +6,7 @@ class ListNode(object):
     def inserValueIntoSortedLinedList(self, l,value):
         self.l = l
         self.value = ListNode(value)
-        
+
         new_node = ListNode(value) #Always start here
         if l is None:
             return new_node ##This is my first edge case stating if there is nothing in the list, you want to return a linked list with the new node value in it
